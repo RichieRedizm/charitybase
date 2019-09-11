@@ -1,0 +1,2 @@
+export const GET_CHARITIES = 'GET_CHARITIES'
+export const SET_LOADING = 'SET_LOADING'

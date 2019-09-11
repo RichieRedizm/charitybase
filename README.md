@@ -1,3 +1,36 @@
+# Lightful Full Stack Take Home Exercise
+
+Lightful is preparing a new application that lets grant giving bodies find charities to give money called Grant Giver.
+
+It intends to distribute money to charities that currently do not recieve much in grants.
+
+Write an application in React that:
+
+1. Queries the GraphQL API at https://charitybase.uk/. You can sign up over there and get an API key and then use the [Playground](https://charitybase.uk/api-portal/playground) to explore the API.
+
+2. Displays the details of the charities it finds or says it cannot find them. Charities should be ordered by their income (least income first - the API supports this). Their income and spending in the last year should be displayed. Details should be anything relevant to a grant giving organisation in terms of contact: their address, email and telephone number if available.
+
+3. Gives the details of the grants the charity has recieved. This is in the API.
+
+4. Gives the total amount they have received in grants and shows what amount of their total income this represents. You'll need to calculate this.
+
+You shouldn't spend more than a few hours on this. We are looking for clear, maintainable code which adheres to good design principles.
+
+This Git repository is bootstrapped with `create-react-app` for a basic setup. It has all the libraries needed to begin.
+
+For documentation for Apollo, a GraphQL client we use, see:
+- https://www.apollographql.com/docs/react/essentials/get-started/
+- https://developer.okta.com/blog/2018/10/11/build-simple-web-app-with-express-react-graphql
+
+However if you wanted to use some other GraphQL library to talk to the API, then you are welcome to.
+
+## Our Definition of Done
+
+This is the real definition of done used by the Platform team. Any code making it to production would be expected to meet it.
+- Code has automated tests in Jest.
+
+# Further Instructions
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

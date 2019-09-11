@@ -1,33 +1,243 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Global Styles */
+:root {
+  --primary-color: #dc3545;
+  --dark-color: #234c61d6;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+  --dark-label-color: #234c61d6;
+  --light-label-color: #4b7b94ba;
+  --transparent-primary-color: rgba(10, 71, 95, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+/* Text Styles */
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* Label Styles*/
+.label-dark {
+  display: block;
+  color: var(--dark-label-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.label-light {
+  color: var(--light-label-color);
+}
+
+/* Cards */
+.card {
+  position: relative;
+  padding: 1rem 1rem 2rem;
+  background-color: var(--transparent-primary-color);
+  margin: 0.7rem 0;
+  border-radius: 8px;
+}
+.card.list-item {
+  background: transparent;
+  border: 8px var(--transparent-primary-color) dashed;
+}
+
+.list-item .image-wrap {
+  height: 50%;
+  display: grid;
+}
+
+.list-item img {
+  max-width: 60%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  display: grid;
+  margin: auto auto;
+}
+.meta {
+  height: 100px;
+}
+
+.number {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-bottom: 10px;
+}
+
+/* Detail */
+.detail-wrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.detail span {
+  padding: 0 4px;
+  font-size: 0.9em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.detail-meta {
+  width: 30%;
+}
+
+.detail-image {
+  width: 70%;
+}
+
+.detail-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 40vw;
+  max-height: 300px;
+  margin: 0 auto;
+}
+
+/* List */
+.list {
+  margin: 0.5rem 0;
+}
+
+.list li {
+  padding-bottom: 0.3rem;
+}
+
+/* Grid */
+.grid-12 {
+  grid-template-columns: 1fr;
+}
+.grid-123 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0.5rem 1rem 0;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+  margin-right: 0.2rem;
+}
+
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: #ccc;
+  background-color: rgba(10, 71, 95, 0.2);
+}
+.btn-light:hover {
+  color: var(--dark-color);
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-dark:hover {
+  color: var(--light-color);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.bg-light,
+.badge-light {
+  border: #ccc solid 1px;
+}
+
+/* larger screen Styles */
+@media (min-width: 700px) {
+  .detail-image {
+    width: 40%;
   }
-  to {
-    transform: rotate(360deg);
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .grid-123 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid-123 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
