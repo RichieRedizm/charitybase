@@ -9,7 +9,7 @@ const ItemList = () => {
   if (loading || charities == null) {
     return 'Loading....'
   }
-  // console.log('charities', charities)
+
   return (
     <div>
       {charities.map(charity => (

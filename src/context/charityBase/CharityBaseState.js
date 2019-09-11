@@ -20,6 +20,7 @@ const CharityBaseState = props => {
     }
   })
 
+  // load the first 20 charities with the lowest income ascending
   useEffect(() => {
     setLoading()
     client
@@ -54,7 +55,6 @@ const CharityBaseState = props => {
         `
       })
       .then(result =>
-        // console.log('GET_CHARITIES', result.data.CHC.getCharities.list)
         dispatch({
           type: GET_CHARITIES,
           payload: result.data.CHC.getCharities.list
@@ -63,12 +63,57 @@ const CharityBaseState = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // take income from and to values to search the api
+  const searchCharities = (from, to) => {
+    setLoading()
+    client
+      .query({
+        query: gql`
+          {
+            CHC {
+              getCharities(
+								filters: { finances: { latestIncome: { gt: ${from}, lt: ${to} } } }
+								) {
+                count
+                list(limit: 20, sort: income_asc) {
+                  id
+                  names {
+                    value
+                    primary
+                  }
+                  activities
+                  finances {
+                    income
+                    spending
+                  }
+                  grants {
+                    id
+                    amountAwarded
+                    fundingOrganization {
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `
+      })
+      .then(result =>
+        dispatch({
+          type: GET_CHARITIES,
+          payload: result.data.CHC.getCharities.list
+        })
+      )
+  }
+
   // set loading
   const setLoading = () => dispatch({ type: SET_LOADING })
 
   return (
     <CharityBaseContext.Provider
       value={{
+        searchCharities,
         charities: state.charities,
         loading: state.loading
       }}
