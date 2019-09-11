@@ -166,13 +166,14 @@ img {
   color: #333;
 }
 
-.btn-light,
-.bg-light,
-.badge-light,
-.alert-light {
-  background: #ccc;
-  background-color: rgba(10, 71, 95, 0.2);
+.alert-red {
+  background: rgb(253, 161, 161);
 }
+
+.alert-light {
+  background: #fff;
+}
+
 .btn-light:hover {
   color: var(--dark-color);
 }

@@ -36,7 +36,13 @@ const CharityBaseState = props => {
                     value
                     primary
                   }
-                  activities
+                  contact {
+                    email
+                    person
+                    phone
+                    address
+                    postcode
+                  }
                   finances {
                     income
                     spending
@@ -81,7 +87,13 @@ const CharityBaseState = props => {
                     value
                     primary
                   }
-                  activities
+									contact {
+										email
+										person
+										phone
+										address
+										postcode
+									}
                   finances {
                     income
                     spending

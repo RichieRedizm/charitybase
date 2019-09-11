@@ -6,8 +6,11 @@ const ItemList = () => {
   const charityBaseContext = useContext(CharityBaseContext)
   const { loading, charities } = charityBaseContext
 
-  if (loading || charities == null) {
+  if (loading || charities === null) {
     return 'Loading....'
+  }
+  if (charities.length === 0) {
+    return 'Sorry, there are no charities that match that criteria.'
   }
 
   return (
