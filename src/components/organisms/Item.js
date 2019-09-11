@@ -1,10 +1,10 @@
 import React from 'react'
 
-const displayGrants = grants => {
+const Grants = ({ grants }) => {
   if (grants === null) {
     return (
       <div>
-        <strong className='label-light'>No Grant</strong>
+        <strong className='label-dark'>No Grant</strong>
       </div>
     )
   }
@@ -12,23 +12,36 @@ const displayGrants = grants => {
   grants.map(grant => (totalAmount += grant.amountAwarded))
   return (
     <div>
-      <strong className='label-light'>Total Grant: </strong>£
+      <strong className='label-dark'>Total Grant: </strong>£
       {Math.round(totalAmount)}
     </div>
   )
 }
 
+const Finances = ({ finances }) => {
+  return finances.map((item, index) => (
+    <div key={`finance-${index}`}>
+      <div>
+        <strong className='label-light'>Income: </strong>£{item.income}
+      </div>
+      <div>
+        <strong className='label-light'>Spending: </strong>£{item.spending}
+      </div>
+    </div>
+  ))
+}
+
 const Item = ({ charity: { names, grants, finances } }) => {
-  console.log('finances', finances)
   return (
-    <div className='card grid-123'>
+    <div className='card grid-item'>
       <div>
         <h4>{names[0].value}</h4>
       </div>
       <div>
         <strong className='label-dark'>Finances:</strong>
+        <Finances finances={finances} />
       </div>
-      <div>{displayGrants(grants)}</div>
+      <Grants grants={grants} />
     </div>
   )
 }
