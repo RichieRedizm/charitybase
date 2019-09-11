@@ -4,7 +4,7 @@ import AlertContext from '../../context/alert/alertContext'
 
 const Search = () => {
   const charityBaseContext = useContext(CharityBaseContext)
-  const { searchCharities, charities } = charityBaseContext
+  const { searchCharities } = charityBaseContext
   const alertContext = useContext(AlertContext)
   const [incomeFrom, setIncomeFrom] = useState('')
   const [incomeTo, setincomeTo] = useState('')
@@ -25,28 +25,24 @@ const Search = () => {
 
   return (
     <div>
+      <strong>Search charities by their income</strong>
       <form onSubmit={onSubmit} className='form'>
         <input
           type='number'
           name='income_from'
-          placeholder='from...'
+          placeholder='Income from...'
           value={incomeFrom}
           onChange={onChangeFrom}
         />
         <input
           type='text'
           name='income_to'
-          placeholder='to...'
+          placeholder='Income to...'
           value={incomeTo}
           onChange={onChangeTo}
         />
         <input type='submit' value='Search' className='btn btn-dark' />
       </form>
-      {/* {charities.length > 0 && (
-        <button className='btn btn-white btn-block' onClick={clearUsers}>
-          Clear
-        </button>
-      )} */}
     </div>
   )
 }
