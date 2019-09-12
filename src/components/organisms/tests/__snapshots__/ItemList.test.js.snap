@@ -53,6 +53,22 @@ exports[`if charities data available generate list of items 1`] = `
           <strong
             class="label-light"
           >
+            Latest Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Latest Spending: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
             Total Income: 
           </strong>
           £0
@@ -118,6 +134,22 @@ exports[`if charities data available generate list of items 1`] = `
         >
           Finances:
         </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Latest Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Latest Spending: 
+          </strong>
+          £0
+        </div>
         <div>
           <strong
             class="label-light"
@@ -204,6 +236,22 @@ exports[`if charities data available generate list of items 1`] = `
         >
           Finances:
         </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Latest Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Latest Spending: 
+          </strong>
+          £0
+        </div>
         <div>
           <strong
             class="label-light"
