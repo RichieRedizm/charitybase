@@ -1,5 +1,5 @@
 import { createContext } from 'react'
 
-const CharityBase = createContext()
+const CharityBaseContext = createContext()
 
-export default CharityBase
+export default CharityBaseContext
