@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import CharityBaseState from './context/charityBase/CharityBaseState'
 import AlertState from './context/alert/AlertState'
-import Alert from './components/organisms/Alert'
+import Alert from './components/atoms/Alert'
 import Search from './components/organisms/Search'
 import ItemList from './components/organisms/ItemList'
 

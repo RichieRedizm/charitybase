@@ -15,7 +15,7 @@ const Search = () => {
   const onSubmit = e => {
     e.preventDefault()
     if (incomeTo === '' || incomeFrom === '') {
-      alertContext.setAlert('Please add a value for each input field!', 'light')
+      alertContext.setAlert('Please add a value for each input field!', 'red')
     } else {
       searchCharities(incomeFrom, incomeTo)
       setIncomeFrom('')

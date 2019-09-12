@@ -166,13 +166,14 @@ img {
   color: #333;
 }
 
-.btn-light,
-.bg-light,
-.badge-light,
-.alert-light {
-  background: #ccc;
-  background-color: rgba(10, 71, 95, 0.2);
+.alert-red {
+  background: rgb(253, 161, 161);
 }
+
+.alert-light {
+  background: #fff;
+}
+
 .btn-light:hover {
   color: var(--dark-color);
 }
@@ -201,12 +202,12 @@ img {
 /* larger screen Styles */
 @media (min-width: 900px) {
   .grid-item {
-    grid-template-columns: 40% repeat(2, 1fr);
+    grid-template-columns: 2fr repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1080px) {
   .grid-item {
-    grid-template-columns: 50% repeat(2, 1fr);
+    grid-template-columns: 3fr repeat(2, 1fr);
   }
 }
