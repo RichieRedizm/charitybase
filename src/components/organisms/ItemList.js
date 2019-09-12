@@ -1,12 +1,8 @@
-import React, { useContext } from 'react'
-import CharityBaseContext from '../../context/charityBase/charityBaseContext'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Item from './Item'
 
-const ItemList = () => {
-  const charityBaseContext = useContext(CharityBaseContext)
-  console.log('charityBaseContext', charityBaseContext)
-  const { charities, loading } = charityBaseContext
-
+const ItemList = ({ charities, loading }) => {
   if (loading || charities === null) {
     return 'Loading....'
   }
@@ -20,6 +16,11 @@ const ItemList = () => {
       ))}
     </div>
   )
+}
+
+ItemList.contextTypes = {
+  charities: PropTypes.array,
+  loading: PropTypes.bool
 }
 
 export default ItemList

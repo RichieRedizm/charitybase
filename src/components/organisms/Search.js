@@ -1,11 +1,8 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Alert from '../atoms/Alert'
-import CharityBaseContext from '../../context/charityBase/charityBaseContext'
 import isEmpty from 'lodash/isEmpty'
 
-const Search = () => {
-  const charityBaseContext = useContext(CharityBaseContext)
-  const { searchCharities } = charityBaseContext
+const Search = ({ searchCharities }) => {
   const [alert, setAlert] = useState({})
   const [incomeFrom, setIncomeFrom] = useState('')
   const [incomeTo, setincomeTo] = useState('')
