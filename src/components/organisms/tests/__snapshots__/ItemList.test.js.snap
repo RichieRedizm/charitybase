@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`if charities data available generate list of items 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="charities-list"
+  >
+    <div
+      class="card grid-item"
+    >
+      <div>
+        <h4>
+          Wandsworth Mind
+        </h4>
+        <div>
+          <strong
+            class="label-dark"
+          >
+            Email: 
+          </strong>
+          finance@bwwmind.org.uk
+        </div>
+        <div
+          class="address-wrap"
+        >
+          <strong
+            class="label-dark"
+          >
+            Address:
+          </strong>
+          <br />
+          <div>
+            Brent Wandsworth & Westminster Mind,
+          </div>
+          <div>
+            6 Osbert Street,
+          </div>
+          <div>
+            London,
+          </div>
+          <div>
+            SW1P 2QU
+          </div>
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          Finances:
+        </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Spending: 
+          </strong>
+          £0
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          No Grant
+        </strong>
+      </div>
+    </div>
+    <div
+      class="card grid-item"
+    >
+      <div>
+        <h4>
+          Carmarthen Mind Association
+        </h4>
+        <div>
+          <strong
+            class="label-dark"
+          >
+            Email: 
+          </strong>
+          carmsmind132@aol.com
+        </div>
+        <div
+          class="address-wrap"
+        >
+          <strong
+            class="label-dark"
+          >
+            Address:
+          </strong>
+          <br />
+          <div>
+            Mind Carmarthen,
+          </div>
+          <div>
+            132B Priory Street,
+          </div>
+          <div>
+            Carmarthen,
+          </div>
+          <div>
+            SA31 1LR
+          </div>
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          Finances:
+        </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Spending: 
+          </strong>
+          £0
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          Grants Awarded: 
+        </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Lloyds Bank Foundation for England and Wales: 
+          </strong>
+          £15100
+        </div>
+        <strong
+          class="label-dark"
+        >
+          Total Grant: 
+        </strong>
+        £15100
+      </div>
+    </div>
+    <div
+      class="card grid-item"
+    >
+      <div>
+        <h4>
+          The Elliott Charity
+        </h4>
+        <div>
+          <strong
+            class="label-dark"
+          >
+            Email: 
+          </strong>
+          contact@mind.org.uk
+        </div>
+        <div
+          class="address-wrap"
+        >
+          <strong
+            class="label-dark"
+          >
+            Address:
+          </strong>
+          <br />
+          <div>
+            Mind N A M H,
+          </div>
+          <div>
+            Granta House,
+          </div>
+          <div>
+            15-19 Broadway,
+          </div>
+          <div>
+            London,
+          </div>
+          <div>
+            E15 4BQ
+          </div>
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          Finances:
+        </strong>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Income: 
+          </strong>
+          £0
+        </div>
+        <div>
+          <strong
+            class="label-light"
+          >
+            Total Spending: 
+          </strong>
+          £0
+        </div>
+      </div>
+      <div>
+        <strong
+          class="label-dark"
+        >
+          No Grant
+        </strong>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const Finances = ({ finances }) => {
-  return finances.map((item, index) => (
-    <div key={`finance-${index}`}>
+  let totalIncome = 0
+  let totalSpending = 0
+  finances.map(finance => {
+    totalIncome += finance.income
+    totalSpending += finance.spending
+  })
+  return (
+    <Fragment>
       <div>
-        <strong className='label-light'>Income: </strong>£{item.income}
+        <strong className='label-light'>Total Income: </strong>£{totalIncome}
       </div>
       <div>
-        <strong className='label-light'>Spending: </strong>£{item.spending}
+        <strong className='label-light'>Total Spending: </strong>£
+        {totalSpending}
       </div>
-    </div>
-  ))
+    </Fragment>
+  )
 }
 
 export default Finances

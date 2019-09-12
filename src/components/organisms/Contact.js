@@ -3,7 +3,7 @@ import Address from './Address'
 
 const Contact = ({ contact }) => {
   const { email, address, postcode } = contact
-  console.log('address', address)
+
   return (
     <Fragment>
       {email && (

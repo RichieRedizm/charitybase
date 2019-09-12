@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react'
-import CharityBaseContext from '../../context/charityBase/charityBaseContext'
-import AlertContext from '../../context/alert/alertContext'
+import React, { useState } from 'react'
+import Alert from '../atoms/Alert'
+import isEmpty from 'lodash/isEmpty'
 
-const Search = () => {
-  const charityBaseContext = useContext(CharityBaseContext)
-  const { searchCharities } = charityBaseContext
-  const alertContext = useContext(AlertContext)
+const Search = ({ searchCharities }) => {
+  const [alert, setAlert] = useState({})
   const [incomeFrom, setIncomeFrom] = useState('')
   const [incomeTo, setincomeTo] = useState('')
 
@@ -15,8 +13,9 @@ const Search = () => {
   const onSubmit = e => {
     e.preventDefault()
     if (incomeTo === '' || incomeFrom === '') {
-      alertContext.setAlert('Please add a value for each input field!', 'red')
+      setAlert({ msg: 'Please add a value for each input field!', type: 'red' })
     } else {
+      setAlert({})
       searchCharities(incomeFrom, incomeTo)
       setIncomeFrom('')
       setincomeTo('')
@@ -43,6 +42,7 @@ const Search = () => {
         />
         <input type='submit' value='Search' className='btn btn-dark' />
       </form>
+      {!isEmpty(alert) && <Alert alert={alert} />}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 import Finances from '../atoms/Finances'
-import Grants from '../atoms/Grants'
+import Grants from './Grants'
 
 const Item = ({ charity: { names, grants, finances, contact } }) => {
   return (
