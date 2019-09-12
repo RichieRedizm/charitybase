@@ -3,6 +3,7 @@ import Address from './Address'
 
 const Contact = ({ contact }) => {
   const { email, address, postcode } = contact
+  console.log('address', address)
   return (
     <Fragment>
       {email && (
@@ -11,7 +12,7 @@ const Contact = ({ contact }) => {
           {email}
         </div>
       )}
-      <Address address={address} postcode={postcode} />
+      {address.length > 0 && <Address address={address} postcode={postcode} />}
     </Fragment>
   )
 }

@@ -202,12 +202,12 @@ img {
 /* larger screen Styles */
 @media (min-width: 900px) {
   .grid-item {
-    grid-template-columns: 40% repeat(2, 1fr);
+    grid-template-columns: 2fr repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1080px) {
   .grid-item {
-    grid-template-columns: 50% repeat(2, 1fr);
+    grid-template-columns: 3fr repeat(2, 1fr);
   }
 }
