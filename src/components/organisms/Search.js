@@ -4,28 +4,52 @@ import isEmpty from 'lodash/isEmpty'
 
 const Search = ({ searchCharities }) => {
   const [alert, setAlert] = useState({})
+  const [charityName, setCharityName] = useState('')
   const [incomeFrom, setIncomeFrom] = useState('')
   const [incomeTo, setincomeTo] = useState('')
 
+  const onChangeName = e => setCharityName(e.target.value)
   const onChangeFrom = e => setIncomeFrom(e.target.value)
   const onChangeTo = e => setincomeTo(e.target.value)
 
   const onSubmit = e => {
     e.preventDefault()
     if (incomeTo === '' || incomeFrom === '') {
-      setAlert({ msg: 'Please add a value for each input field!', type: 'red' })
+      if (charityName === '') {
+        setAlert({
+          msg:
+            'Please enter either a charity or values for income to and from to search!',
+          type: 'red'
+        })
+        return
+      } else {
+        queryAPI(charityName, -1, 100)
+        return
+      }
     } else {
-      setAlert({})
-      searchCharities(incomeFrom, incomeTo)
-      setIncomeFrom('')
-      setincomeTo('')
+      queryAPI('all', incomeFrom, incomeTo)
     }
+  }
+
+  const queryAPI = (charityName, incomeFrom, incomeTo) => {
+    setAlert({})
+    searchCharities(charityName, incomeFrom, incomeTo)
+    setCharityName('')
+    setIncomeFrom('')
+    setincomeTo('')
   }
 
   return (
     <div>
       <strong>Search charities by their income</strong>
       <form onSubmit={onSubmit} className='form'>
+        <input
+          type='text'
+          name='charity_name'
+          placeholder='Charity...'
+          value={charityName}
+          onChange={onChangeName}
+        />
         <input
           type='number'
           name='income_from'

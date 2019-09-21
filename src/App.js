@@ -20,52 +20,12 @@ function App() {
   // load the first 20 charities with the lowest income ascending
   useEffect(() => {
     setLoading(true)
-    client
-      .query({
-        query: gql`
-          {
-            CHC {
-              getCharities(filters: { search: "all" }) {
-                count
-                list(limit: 20, sort: income_asc) {
-                  id
-                  names {
-                    value
-                    primary
-                  }
-                  contact {
-                    email
-                    person
-                    phone
-                    address
-                    postcode
-                  }
-                  finances(all: true) {
-                    income
-                    spending
-                  }
-                  grants {
-                    id
-                    amountAwarded
-                    fundingOrganization {
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `
-      })
-      .then(result => {
-        setCharities(result.data.CHC.getCharities.list)
-        setLoading(false)
-      })
+    searchCharities('all', -1, 100)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // take income from and to values to search the api
-  const searchCharities = (from, to) => {
+  const searchCharities = (name, from, to) => {
     setLoading(true)
     client
       .query({
@@ -73,7 +33,7 @@ function App() {
           {
             CHC {
               getCharities(
-								filters: { finances: { latestIncome: { gt: ${from}, lt: ${to} } } }
+								filters: { search: "${name}", finances: { latestIncome: { gt: ${from}, lt: ${to} } } }
 								) {
                 count
                 list(limit: 20, sort: income_asc) {
