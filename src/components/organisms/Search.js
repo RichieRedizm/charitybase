@@ -21,10 +21,8 @@ const Search = ({ searchCharities }) => {
             'Please enter either a charity or values for income to and from to search!',
           type: 'red'
         })
-        return
       } else {
         queryAPI(charityName, -1, 100)
-        return
       }
     } else {
       queryAPI('all', incomeFrom, incomeTo)
